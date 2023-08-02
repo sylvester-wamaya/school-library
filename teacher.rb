@@ -1,12 +1,15 @@
-require './person.rb'
+# frozen_string_literal: true
 
+require './person'
+
+# Defines a teacher's object
 class Teacher < Person
-    def initialize(id, name = "Unknown", age, parent_permission = true, specialization)
-        super(id, name, age, parent_permission)
-        @specialization = specialization
-    end
+  def initialize(id, age, specialization, parent_permission: true, name: 'Unknown')
+    super(id, name, age, parent_permission)
+    @specialization = specialization
+  end
 
-    def can_use_services?
-        true
-    end
+  def can_use_services?
+    true
+  end
 end
