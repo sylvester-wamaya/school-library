@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Defines a person's object
 class Person
   attr_accessor :name, :age
