@@ -1,5 +1,7 @@
 # Defines a person's object
-class Person
+require './nameable.rb'
+
+class Person > Nameable
   attr_accessor :name, :age
   attr_writer :id
 
@@ -9,6 +11,10 @@ class Person
     @age = age
     @parent_permission = parent_permission
   end
+
+  def correct_name    
+    @name
+  end 
 
   def can_use_services?
     of_age? || @parent_permission
