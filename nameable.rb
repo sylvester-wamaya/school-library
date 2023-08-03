@@ -1,7 +1,7 @@
 # A class to edit names
 class Nameable
 
-    def correct_name(name)    
-        raise NotImplementedError, "Method not implemented yet"   
+    def correct_name    
+        raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"  
     end
 end
