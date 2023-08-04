@@ -1,7 +1,7 @@
 require './nameable'
 # Defines a person's object
 class Person < Nameable
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rentals
   attr_reader :id
 
   def initialize(age, name = 'Unknown', parent_permission: true)
@@ -10,6 +10,7 @@ class Person < Nameable
     @age = age
     @name = name
     @parent_permission = parent_permission
+    @rentals = []
   end
 
   def correct_name
@@ -28,5 +29,10 @@ class Person < Nameable
 
   def random
     rand(1..1000)
+  end
+
+  def add_rental(rental)
+    @rentals << rental unless @rentals.include?(rental)
+    rental.person = self
   end
 end
