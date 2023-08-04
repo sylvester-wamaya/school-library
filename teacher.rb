@@ -1,4 +1,4 @@
-require './person'
+require './person.rb'
 
 # Defines a teacher's object
 class Teacher < Person

@@ -1,6 +1,6 @@
-class TrimmerDecorator < BaseDecorator
+class TrimmerDecorator < Decorator
 
     def correct_name
-        @nameable.correct_name.strip.truncate(10)
+        super[0..9]
     end
 end

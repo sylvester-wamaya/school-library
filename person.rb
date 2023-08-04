@@ -1,7 +1,8 @@
 # Defines a person's object
-require './nameable.rb'
 
-class Person < Nameable
+class Person 
+  include Nameable
+  
   attr_accessor :name, :age
   attr_writer :id
 

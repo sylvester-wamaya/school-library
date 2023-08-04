@@ -1,9 +1,9 @@
-require './base_decorator.rb'
+
 
 # Class for name captalization
-class CapitalizeDecorator < BaseDecorator
+class CapitalizeDecorator < Decorator
 
     def correct_name
-        @nameable.correct_name.captilize
+        super.captilize
     end
 end
