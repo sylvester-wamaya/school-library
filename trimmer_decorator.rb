@@ -3,6 +3,6 @@ require './decorator'
 # A class to trim names
 class TrimmerDecorator < Decorator
   def correct_name
-    super.length > 10 ? super[0..9] : super
+    @nameable.correct_name.length > 10 ? @nameable.correct_name[0..9] : @nameable.correct_name
   end
 end
