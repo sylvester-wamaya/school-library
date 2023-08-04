@@ -1,7 +1,6 @@
 require './nameable'
 # A Decorator class
-class Decorator
-    include Nameable
+class Decorator < Nameable
 
     attr_accessor :nameable
     
