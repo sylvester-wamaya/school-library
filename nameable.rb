@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # A class to edit names
 class Nameable
   def initilialize(nameable)

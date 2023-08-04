@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require './decorator'
 
 # A class to trim names

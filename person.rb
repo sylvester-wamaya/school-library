@@ -1,15 +1,13 @@
-# frozen_string_literal: true
-
 require './nameable'
 # Defines a person's object
 class Person < Nameable
   attr_accessor :name, :age
-  attr_writer :id
+  attr_reader :id
 
-  def initialize(age, parent_permission: true, name: 'Unknown')
+  def initialize(age, name = 'Unknown', parent_permission: true)
     @id = Random.rand(1..1000)
-    @name = name
     @age = age
+    @name = name
     @parent_permission = parent_permission
     super(name)
   end
@@ -28,6 +26,3 @@ class Person < Nameable
     @age >= 18
   end
 end
-
-person = Person.new(22, 'maximilianus')
-person.correct_name
