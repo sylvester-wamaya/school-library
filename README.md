@@ -48,7 +48,9 @@ The School Library allows the user to record what books are in the library and w
 
 - **Added Person super class with its methods** 
 - **Added Teacher and Student classes with their methods** 
-**Added Decorators** 
+- **Added Decorators** 
+- **Added class associations** 
+
 
 
 
