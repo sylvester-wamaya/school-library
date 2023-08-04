@@ -1,14 +1,15 @@
 require_relative 'book'
 require_relative 'person'
 
+# Creates a rental class
 class Rental
-    attr_accessor :date, :book, :person
+  attr_accessor :date, :book, :person
 
-    def initialize(date, book, person)
-        @date = date
-        @book = book
-        @person = person
-        book.rentals << self unless books.rentals.include?(self)
-        person.rentals << self unless person.rentals.include?(self)
-    end
+  def initialize(date, book, person)
+    @date = date
+    @book = book
+    @person = person
+    book.rentals << self unless books.rentals.include?(self)
+    person.rentals << self unless person.rentals.include?(self)
+  end
 end
