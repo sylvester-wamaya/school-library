@@ -1,8 +1,8 @@
 require './nameable'
 # A Decorator class
 class Decorator < Nameable
-  def initialize(nameable)
-    super(nameable)
+  def initialize(nameable, *args)
+    super(*args)
     @nameable = nameable
   end
 

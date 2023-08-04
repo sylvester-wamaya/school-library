@@ -5,11 +5,11 @@ class Person < Nameable
   attr_reader :id
 
   def initialize(age, name = 'Unknown', parent_permission: true)
-    @id = Random.rand(1..1000)
+    super()
+    @id = rand
     @age = age
     @name = name
     @parent_permission = parent_permission
-    super(name)
   end
 
   def correct_name
@@ -24,5 +24,9 @@ class Person < Nameable
 
   def of_age?
     @age >= 18
+  end
+
+  def random
+    rand(1..1000)
   end
 end
