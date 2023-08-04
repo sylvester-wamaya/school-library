@@ -10,6 +10,7 @@ class Person < Nameable
     @age = age
     @name = name
     @parent_permission = parent_permission
+    @rentals = []
   end
 
   def correct_name
@@ -29,4 +30,8 @@ class Person < Nameable
   def random
     rand(1..1000)
   end
+
+  def add_rental(rental)
+    rentals << rental
+    rental.person = self
 end
