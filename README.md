@@ -50,6 +50,7 @@ The School Library allows the user to record what books are in the library and w
 - **Added Teacher and Student classes with their methods** 
 - **Added Decorators** 
 - **Added class associations** 
+- **Added basic terminal UI**
 
 
 
