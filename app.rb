@@ -106,5 +106,6 @@ class App
             puts "#{rental.book.title} by #{rental.book.author} on #{rental.date}"
           end
         end
+        end
       
 end  
