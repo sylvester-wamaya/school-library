@@ -4,6 +4,7 @@ require_relative 'student'
 require_relative 'teacher'
 
 
+
 # Define the UI app methods
 class App 
     def initialize
@@ -25,7 +26,7 @@ class App
         if @people.empty?
             puts 'No person found'
         else
-            @people.each_with_index {|person, index| puts "#{index + 1}. #{person.name} (#{person.class})"}
+            @people.each_with_index {|person, index| puts "#{index + 1}. #{person.id} #{person.name} (#{person.class})"}
         end
 
     end
@@ -48,11 +49,11 @@ class App
         age = gets.chomp.to_i
         print 'Name: '
         name = gets.chomp.capitalize
-        print 'Classroom: '
-        classroom = gets.chomp.capitalize
+        #print 'Classroom: '
+       # classroom = gets.chomp.capitalize
         print 'Has a parent permission? [Y/N]: '
         parent_permission = gets.chomp.upcase == 'Y'
-        @people << Student.new(classroom: classroom, age: age, parent_permission: parent_permission, name: name)
+        @people << Student.new(age, nil, name, parent_permission: parent_permission)
         puts 'Student created successfully'
     end
         def create_teacher
@@ -63,8 +64,7 @@ class App
             name = gets.chomp.capitalize
             print 'Specialization: '
             specialization = gets.chomp.capitalize
-            @people << Teacher.new(specialization: specialization, age: age, name: name)
-            @people << new_teacher
+            @people << Teacher.new(age, name, specialization)
             puts 'Teacher created successfully'
         end
 
@@ -73,8 +73,9 @@ class App
         title = gets.chomp.capitalize
         print 'Enter Author: '
         author = gets.chomp.capitalize
-        puts title, author
-        @books << Book.new(title: title, author: author)
+        
+        @books << Book.new(title, author)
+        puts "#{title} by #{author} book created successfully"
       end
     
       def create_rental
@@ -88,7 +89,7 @@ class App
         person = @people[number_person - 1]
         print 'Date: '
         date = gets.chomp.to_s
-        @rentals << Rental.new(date: date, book: book, person: person)
+        @rentals << Rental.new(date, book, person)
         print 'Rental created successfully'
       end
     

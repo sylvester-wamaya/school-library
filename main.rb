@@ -17,15 +17,17 @@ class Main
 
   def list_of_options
     puts
-    puts 'Please choose an option by entering a number:'
+    puts '---------------------------------------------'
+    puts 'Console Menu'
     puts '1 - List all books'
     puts '2 - List all people'
     puts '3 - Create a person'
     puts '4 - Create a book'
     puts '5 - Create a rental'
     puts '6 - List all rental for a given person id'
-    puts '7 - Exit'
-    puts
+    puts '0 - Exit'
+    puts '----------------------------------------------'
+    puts 'Enter your choice'
     gets.chomp.to_i
   end
 
@@ -44,7 +46,7 @@ class Main
       @app.create_rental
     when 6
       @app.list_rentals_by_id
-    when 7
+    when 0
       puts 'Thanks for using the school library App!'
       exit
     else

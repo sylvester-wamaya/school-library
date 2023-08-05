@@ -1,5 +1,3 @@
-require_relative 'book'
-require_relative 'person'
 
 # Creates a rental class
 class Rental
@@ -9,7 +7,7 @@ class Rental
     @date = date
     @book = book
     @person = person
-    book.rentals << self unless books.rentals.include?(self)
+    book.rentals << self unless book.rentals.include?(self)
     person.rentals << self unless person.rentals.include?(self)
   end
 end
