@@ -8,10 +8,10 @@ class Main
 
   def start
     puts 'Welcome to our library! 👋'
-
+    app = App.new
     loop do
       options = menu
-      menu_input(options)
+      menu_input(options, app)
     end
   end
 
@@ -31,28 +31,22 @@ class Main
     gets.chomp.to_i
   end
 
- 
-  def menu_input(input)
-    case input
-    when 1
-      @app.list_books
-    when 2
-      @app.list_people
-    when 3
-      @app.create_person
-    when 4
-      @app.create_book
-    when 5
-      @app.create_rental
-    when 6
-      @app.list_rentals_by_id
-    when 0
-      puts '...Thanks you🙏....'
-      exit
+  def menu_input(input, app)
+    operations = {
+      1 => :list_books,
+      2 => :list_people,
+      3 => :create_person,
+      4 => :create_book,
+      5 => :create_rental,
+      6 => :list_rentals_by_id,
+      0 => :quit
+    }
+    action = operations[input]
+    if action
+      app.send(action)
     else
-      puts 'Invalid number: Try again'
+      puts 'Invalid input please try again'
     end
-
   end
 end
 
