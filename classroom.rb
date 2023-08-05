@@ -7,8 +7,7 @@ class Classroom
     @students = []
   end
 
-  def add_student(student)
-    @students << student unless @students.include?(student)
-    student.classroom = self
+  def add_student(age, name, parent_permission)
+    Student.new(age, self, name, parent_permission: parent_permission)
   end
 end
