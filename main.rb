@@ -7,33 +7,33 @@ class Main
   end
 
   def start
-    puts 'Welcome to School Libary App!'
+    puts 'Welcome to our library! 👋'
 
     loop do
-      number_choice = list_of_options
-      choice_selected(number_choice)
+      options = menu
+      menu_input(options)
     end
   end
 
-  def list_of_options
+  def menu
     puts
     puts '---------------------------------------------'
     puts 'Console Menu'
-    puts '1 - List all books'
-    puts '2 - List all people'
-    puts '3 - Create a person'
-    puts '4 - Create a book'
-    puts '5 - Create a rental'
-    puts '6 - List all rental for a given person id'
-    puts '0 - Exit'
+    puts '1. List all books 📕'
+    puts '2. List all people 👭'
+    puts '3. Create a person'
+    puts '4. Create a book'
+    puts '5. Create a rental'
+    puts '6. List all rental for a given person id'
+    puts '0. Exit'
     puts '----------------------------------------------'
     puts 'Enter your choice'
     gets.chomp.to_i
   end
 
  
-  def choice_selected(number)
-    case number
+  def menu_input(input)
+    case input
     when 1
       @app.list_books
     when 2
@@ -47,10 +47,10 @@ class Main
     when 6
       @app.list_rentals_by_id
     when 0
-      puts 'Thanks for using the school library App!'
+      puts '...Thanks you🙏....'
       exit
     else
-      puts 'Invalid number: Please enter a valid number next time'
+      puts 'Invalid number: Try again'
     end
 
   end
