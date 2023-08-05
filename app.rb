@@ -49,12 +49,12 @@ class App
         age = gets.chomp.to_i
         print 'Name: '
         name = gets.chomp.capitalize
-        #print 'Classroom: '
-       # classroom = gets.chomp.capitalize
+        print 'Classroom: '
+       classroom = gets.chomp.capitalize
         print 'Has a parent permission? [Y/N]: '
         parent_permission = gets.chomp.upcase == 'Y'
         @people << Student.new(age, nil, name, parent_permission: parent_permission)
-        puts 'Student created successfully'
+        puts "Student #{name} created successfully"
     end
         def create_teacher
             puts 'Enter the following fields:'
@@ -65,7 +65,7 @@ class App
             print 'Specialization: '
             specialization = gets.chomp.capitalize
             @people << Teacher.new(age, name, specialization)
-            puts 'Teacher created successfully'
+            puts "Teacher #{name} created successfully"
         end
 
       def create_book
@@ -90,7 +90,7 @@ class App
         print 'Date: '
         date = gets.chomp.to_s
         @rentals << Rental.new(date, book, person)
-        print 'Rental created successfully'
+        print "Rental of #{book} for #{person} created successfully on #{date}"
       end
     
       def list_rentals_by_id
@@ -100,8 +100,10 @@ class App
     
         if person.nil?
           puts "No person found."
+            return
         elsif person.rentals.empty?
             puts "No Rentals found"
+            return
         else
             person.rentals.each do |rental|
             puts "#{rental.book.title} by #{rental.book.author} on #{rental.date}"

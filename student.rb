@@ -1,5 +1,5 @@
 require_relative 'person'
-require_relative 'classroom'
+
 
 # Defines a student's object
 class Student < Person
