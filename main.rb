@@ -8,7 +8,7 @@ class Main
 
   def start
     puts 'Welcome to our library! 👋'
-    app = App.new
+   # app = App.new
     loop do
       options = menu
       menu_input(options, app)
